@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gestión de Clientes</title>
   <style>
-    body { font-family: Arial; padding: 20px; background: #f7f7f7; }
-    input, textarea, button { margin: 5px 0; display: block; padding: 8px; width: 100%; max-width: 400px; }
-    .cliente { background: #fff; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; }
-    .cliente button { width: auto; margin-right: 10px; }
-  </style>
+  body { font-family: Arial; padding: 20px; background: #f7f7f7; }
+  input, textarea, button { margin: 5px 0; display: block; padding: 8px; width: 100%; max-width: 400px; }
+  #lista-clientes { display: flex; flex-wrap: wrap; gap: 2%; }
+  .cliente { background: #fff; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; width: 48%; box-sizing: border-box; }
+  .cliente button { width: auto; margin-right: 10px; }
+  @media (max-width: 800px) {
+    .cliente { width: 100%; }
+    #lista-clientes { gap: 0; }
+  }
+</style>
 </head>
 <body>
   <h2>Registro de Clientes</h2>
@@ -164,4 +169,5 @@ function eliminarCliente(index) {
   </script>
 </body>
 </html>
+
 
