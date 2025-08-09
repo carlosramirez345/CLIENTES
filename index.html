@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gestión de Clientes</title>
   <style>
-    body { font-family: Arial; padding: 20px; background: #D1BEB8; }
+    body { font-family: Arial; padding: 20px; background: #f7f7f7; }
     input, textarea, button { margin: 5px 0; display: block; padding: 8px; width: 100%; max-width: 400px; }
-    .cliente { background: #C0D1B8; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; }
+    .cliente { background: #fff; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; }
     .cliente button { width: auto; margin-right: 10px; }
   </style>
 </head>
@@ -63,7 +63,7 @@
       document.getElementById("comentario").value = "";
     }
 
-   let editando = null;
+    let editando = null;
 
 function mostrarClientes() {
   const contenedor = document.getElementById("lista-clientes");
@@ -139,7 +139,6 @@ function agregarCliente() {
   document.getElementById("vehiculo").value = "";
   document.getElementById("comentario").value = "";
 }
-}
 
 function eliminarCliente(index) {
   clientes.splice(index, 1);
@@ -155,9 +154,3 @@ function eliminarCliente(index) {
   </script>
 </body>
 </html>
-
-
-
-
-
-
