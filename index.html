@@ -5,32 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gestión de Clientes</title>
   <style>
-  body { font-family: Arial; padding: 20px; background: #f7f7f7; }
+ body { 
+    font-family: Arial; 
+    padding: 20px; 
+    background: #001D39; 
+    color: #EAE0D5;
+  }
   input, textarea, button, select { 
     margin: 5px 0; 
     display: block; 
     padding: 8px; 
     width: 100%; 
     max-width: 400px; 
-    border-radius: 8px; /* Bordes redondeados */
+    border-radius: 8px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    background: #49769F;
+    color: #EAE0D5;
   }
   #lista-clientes { display: flex; flex-wrap: wrap; gap: 2%; }
   .cliente { 
-    background: #fff; 
+    background: #49769F; 
     padding: 10px; 
     margin-top: 10px; 
     border: 1px solid #ccc; 
-    border-radius: 8px; /* Bordes redondeados */
+    border-radius: 8px;
     width: 48%; 
     box-sizing: border-box; 
+    color: #EAE0D5;
   }
-   .cliente button { width: auto; margin-right: 10px; border-radius: 8px; }
+  .cliente button { 
+    width: auto; 
+    margin-right: 10px; 
+    border-radius: 8px; 
+    background: #001D39; 
+    color: #EAE0D5; 
+    border: 1px solid #EAE0D5;
+    cursor: pointer;
+  }
+     .cliente button:hover {
+    background: #49769F;
+    color: #001D39;
+    border: 1px solid #001D39;
+  }
   @media (max-width: 800px) {
     .cliente { width: 100%; }
     #lista-clientes { gap: 0; }
-  }
   }
 </style>
 </head>
@@ -187,6 +207,7 @@ function eliminarCliente(index) {
   </script>
 </body>
 </html>
+
 
 
 
