@@ -23,6 +23,16 @@
     background: #49769F;
     color: #EAE0D5;
   }
+     .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .buscador {
+      max-width: 300px;
+      margin-left: auto;
+    }
   #lista-clientes { display: flex; flex-wrap: wrap; gap: 2%; }
   .cliente { 
     background: #49769F; 
@@ -55,7 +65,10 @@
 </style>
 </head>
 <body>
-  <h2>Registro de Clientes</h2>
+  <div class="top-bar">
+    <h2>Registro de Clientes</h2>
+    <input id="buscador" class="buscador" type="text" placeholder="Buscar cliente..." oninput="mostrarClientes()" />
+  </div>
   <input id="nombre" placeholder="Nombre del cliente">
   <input id="celular" placeholder="Número celular">
   <input id="vehiculo" placeholder="Vehículo de interés">
@@ -119,8 +132,17 @@ function mostrarClientes() {
   const contenedor = document.getElementById("lista-clientes");
   contenedor.innerHTML = "";
   const filtro = document.getElementById("filtro") ? document.getElementById("filtro").value : "Todos";
+  const busqueda = document.getElementById("buscador") ? document.getElementById("buscador").value.toLowerCase() : "";
+
   clientes.forEach((c, i) => {
-    if (filtro === "Todos" || c.estado === filtro) {
+    const coincideBusqueda =
+      c.nombre.toLowerCase().includes(busqueda) ||
+      c.celular.toLowerCase().includes(busqueda) ||
+      c.vehiculo.toLowerCase().includes(busqueda) ||
+      (c.comentario || "").toLowerCase().includes(busqueda);
+
+    
+    if ((filtro === "Todos" || c.estado === filtro) && coincideBusqueda) {
       const div = document.createElement("div");
       div.className = "cliente";
       div.innerHTML = `
@@ -207,6 +229,7 @@ function eliminarCliente(index) {
   </script>
 </body>
 </html>
+
 
 
 
